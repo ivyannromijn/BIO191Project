@@ -1,0 +1,2 @@
+LINK:
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_010586945.1/
