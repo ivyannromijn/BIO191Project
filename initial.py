@@ -1,51 +1,77 @@
-import tkinter as tk
-from tkinter import filedialog
+# from tkinter import Tk, ttk, filedialog, Text
+# import tkinter
 
-def open_fasta():
-  """Opens a file dialog and displays FASTA file contents in text widget."""
-  filename = filedialog.askopenfilename(title="Select FASTA File", filetypes=[("FASTA files", "*.fasta")])
-  if filename:
-    try:
-      with open(filename, 'r') as f:
-        fasta_content = f.read()
-      txt_content.delete(1.0, tk.END)
-      txt_content.insert(tk.END, fasta_content)
-    except FileNotFoundError:
-      print("File not found!")
 
-def run_fasta (filename):
-  """Placeholder function for future functionality related to running the FASTA file."""
-  # Add functionality related to processing or running the FASTA data here.
-  # For now, it just prints a message
-  print("Running FASTA file:", filename)
+# def open_fasta():
+#     global search_button, radio_var  # Declare search_button and radio_var globally
 
-root = tk.Tk()
-root.title("FASTA File Viewer")
+#     """Opens a FASTA file and displays its content in the text area."""
+#     filename = filedialog.askopenfilename(title="Open FASTA File", filetypes=[("FASTA/FNA files", "*.fasta;*.fna")])
+#     if filename:
+#         try:
+#             with open(filename, "r") as fasta_file:
+#                 fasta_data = fasta_file.read()
+#                 fasta_text.delete("1.0", tkinter.END)
+#                 fasta_text.insert("1.0", fasta_data)
 
-# File selection button
-btn_open = tk.Button(root, text="Open File", command=open_fasta)
-btn_open.pack(side=tk.LEFT, pady=10)
+#             # Enable search button and create radio buttons
+#             search_button.state(['!disabled'])
+#             create_radio_buttons()
 
-# Run button (initially disabled)
-btn_run = tk.Button(root, text="Run", state=tk.DISABLED, command=lambda: run_fasta(filename=""))
-btn_run.pack(side=tk.LEFT, padx=(10, 0), pady=10)  # Add padding on the left side
+#         except FileNotFoundError:
+#             print("File not found!")
 
-# Text widget to display FASTA content
-txt_content = tk.Text(root)
-txt_content.pack(side=tk.LEFT, expand=True, fill=tk.Y)
 
-# Update "Run" button state based on opened file
-def update_run_button_state():
-  # Enable "Run" button only if a file is loaded
-  if filename:
-    btn_run.config(state=tk.NORMAL)  # Enable button
-  else:
-    btn_run.config(state=tk.DISABLED)  # Disable button
+# def create_radio_buttons():
+#     global radio_var  # Access the global variable
 
-filename = ""  # Keep track of opened filename
+#     # Frame to hold the radio buttons
+#     radio_frame = ttk.Frame(root)
+#     radio_frame.pack(padx=5, pady=5)
 
-# Bind opening a file to update button state
-root.bind("<ButtonRelease-1>", update_run_button_state)
+#     radio_var = tkinter.StringVar()  # Create a StringVar for radio button selection
 
-# Main loop
-root.mainloop()
+#     # Define radio button labels and values
+#     radio_options = [
+#         ("gyrA", "value1"),
+#         ("msrA_1", "value2"),
+#         ("msrA_2", "value3"),
+#         ("msrB", "value4"),
+#     ]
+
+#     for text, value in radio_options:
+#         radio_button = ttk.Radiobutton(
+#             radio_frame, text=text, variable=radio_var, value=value
+#         )
+#         radio_button.pack(anchor=tkinter.W)  # Pack radio buttons horizontally
+
+#     # Add functionality to the search button based on radio button selection
+#     def search_based_on_selection():
+#         selected_option = radio_var.get()
+#         # Implement your search logic here using the selected option and FASTA data
+#         print(f"Search using option: {selected_option}")
+
+#     search_button.config(command=search_based_on_selection)
+
+
+# root = Tk()
+# root.title("FASTA File Viewer")
+
+# # Left side for FASTA data
+# fasta_text = Text(root)
+# fasta_text.pack(fill=tkinter.BOTH, expand=True, side=tkinter.LEFT)  # Use tkinter.BOTH
+
+# # Button to open FASTA file
+# open_button = ttk.Button(root, text="Open FASTA File", command=open_fasta)
+# open_button.pack(padx=5, pady=5)
+
+# # Initially disabled search button
+# search_button = ttk.Button(root, text="Search", state='disabled')
+# search_button.pack(padx=5, pady=5)
+
+# # Global variable for radio button selection (initially set to None)
+# radio_var = None
+
+# root.mainloop()
+
+
