@@ -85,6 +85,11 @@ def main():
         
       # Call the function to find gyrA sequences
         found_gyra_sequences = find_gyra_in_fasta(fastfile_content, gyrA)
+        print(found_gyra_sequences)
+        print("hi")
+        print(gyrA)
+        print("hotfog")
+        print(found_gyra_sequences[0])
         if found_gyra_sequences:
             print("gyrA is found in your input file.")
             print("gyrA sequences found in the fasta file:")

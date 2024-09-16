@@ -1,0 +1,3 @@
+Organism Scientific Name	Organism Common Name	Organism Qualifier	Taxonomy id	Assembly Name	Assembly Accession	Source	Annotation	Level	Contig N50	Size	Submission Date	Gene Count	BioProject	BioSample
+Lactiplantibacillus plantarum		strain: SRCM100442	1590	ASM991365v1	GCA_009913655.1	GenBank	Annotation submitted by Microbial Institute for Fermentation Industry	Complete Genome	3223643	3223643	2020-01-22	3036	PRJNA438180	SAMN08707598
+Lactiplantibacillus plantarum		strain: SRCM100442	1590	ASM991365v1	GCF_009913655.1	RefSeq	NCBI Prokaryotic Genome Annotation Pipeline (PGAP)	Complete Genome	3223643	3223643	2020-01-22	3027	PRJNA438180	SAMN08707598
